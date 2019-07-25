@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .box {
+            width: 100%;
+        }
+        .box img {
+            width: 60px;
+            height: 60px;
+        }
+        .box li {
+            height: 85px;
+            float: left;
+            margin: 23px 23px 5px 23px;
+        }
+        .box p {
+            margin-top: 5px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 8px;
+            color: #ffffff;
+            border-radius: 25px;
+            background-color: rgba(0,0,0,0.6);
+        }
+    </style>
+    <script>
+        window.onload=function() {
+            var box = document.getElementById("box");
+            var li = box.getElementsByTagName("li");
+            var title1 = parent.document.getElementById("title");
+            var arr = new Array("用户检索","图书检索","事件检索","通知检索","新闻检索");
+            for (var i = 0; i < li.length; i++) {
+                li[i].index = i;
+                li[i].onclick = function () {
+                    var i1 = this.index;
+                    title1.innerHTML=arr[i1];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul class="box" id="box">
+    <li><a href="SearchUser.php" target="_self"><img src="../img/search-user-tools.png"><p>用户检索</p></a></li>
+    <li><a href="Searchbook.php" target="_self"><img src="../img/search-books-tools.png"><p>图书检索</p></a></li>
+    <li><a href="SearchItems.php" target="_self"><img src="../img/search-wait-tools.png"><p>事件检索</p></a></li>
+    <li><a href="SearchNote.php" target="_self"><img src="../img/search-note-tools.png"><p>通知检索</p></a></li>
+    <li><a href="SearchNews.php" target="_self"><img src="../img/search-news-tools.png"><p>新闻检索</p></a></li>
+</ul>
+</body>
+</html>
+
+
+

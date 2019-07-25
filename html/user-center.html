@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .box {
+            width: 100%;
+        }
+        .box img {
+            width: 60px;
+            height: 60px;
+        }
+        .box li {
+            height: 85px;
+            float: left;
+            margin: 23px 23px 5px 23px;
+        }
+        .box p {
+            margin-top: 5px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 8px;
+            color: #ffffff;
+            border-radius: 25px;
+            background-color: rgba(0,0,0,0.6);
+        }
+    </style>
+    <script>
+        window.onload=function() {
+            var box = document.getElementById("box");
+            var li = box.getElementsByTagName("li");
+            var title1 = parent.document.getElementById("title");
+            var arr = new Array("用户管理","添加用户","借阅记录","权限管理","修改密码");
+            for (var i = 0; i < li.length; i++) {
+                li[i].index = i;
+                li[i].onclick = function () {
+                    var i1 = this.index;
+                    title1.innerHTML=arr[i1];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul class="box" id="box">
+        <li><a href="users.php" target="_self"><img src="../img/user-tools.png"><p>用户管理</p></a></li>
+        <li><a href="add.php?id2=$id2" target="_self"><img src="../img/adduser-icon.png"><p>添加用户</p></a></li>
+        <li><a href="records.php" target="_self"><img src="../img/record-tools.png"><p>借阅记录</p></a></li>
+        <li><a href="RootManger.php" target="_self"><img src="../img/root-tools.png"><p>权限管理</p></a></li>
+        <li><a href="updatepassword.html" target="_self"><img src="../img/ps-tools.png"><p>修改密码</p></a></li>
+    </ul>
+</body>
+</html>

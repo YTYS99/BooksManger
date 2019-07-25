@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .box {
+            width: 100%;
+        }
+        .box img {
+            width: 60px;
+            height: 60px;
+        }
+        .box li {
+            height: 85px;
+            float: left;
+            margin: 23px 23px 5px 23px;
+        }
+        .box p {
+            margin-top: 5px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 8px;
+            color: #ffffff;
+            border-radius: 25px;
+            background-color: rgba(0,0,0,0.6);
+        }
+    </style>
+    <script>
+        window.onload=function() {
+            var box = document.getElementById("box");
+            var li = box.getElementsByTagName("li");
+            var title1 = parent.document.getElementById("title");
+            var arr = new Array("图书管理","图书新增","图书借阅","图书归还","发布新闻","新闻管理","发布通知","管理通知","发布事件","事件管理","文件");
+            for (var i = 0; i < li.length; i++) {
+                li[i].index = i;
+                li[i].onclick = function () {
+                    var i1 = this.index;
+                    title1.innerHTML=arr[i1];
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul class="box" id="box">
+    <li><a href="books.php" target="_self"><img src="../img/books-tools.png"><p>图书管理</p></a></li>
+    <li><a href="add.php?id1=$id1" target="_self"><img src="../img/addbooks-icon.png"><p>图书新增</p></a></li>
+    <li><a href="lendbooks.php?id5=$id5" target="_self"><img src="../img/lend-tools.png"><p>图书借阅</p></a></li>
+    <li><a href="lendbooks.php?id6=$id6" target="_self"><img src="../img/return-tools.png"><p>图书归还</p></a></li>
+    <li><a href="../umeditor-1.2.3/_examples/addNews.html" target="_self"><img src="../img/news-tools.png"><p>发布新闻</p></a></li>
+    <li><a href="News.php" target="_self"><img src="../img/news-manger-tools.png"><p>新闻管理</p></a></li>
+    <li><a href="../umeditor-1.2.3/_examples/addNote.html" target="_self"><img src="../img/note-tools.png"><p>发布通知</p></a></li>
+    <li><a href="Note.php" target="_self"><img src="../img/note-manger-tools.png"><p>管理通知</p></a></li>
+    <li><a href="../umeditor-1.2.3/_examples/simpleDemo.html" target="_self"><img src="../img/wait-tools.png"><p>发布事件</p></a></li>
+    <li><a href="Items.php" target="_self"><img src="../img/wait-manger-tools.png"><p>事件管理</p></a></li>
+    <li><a href="Files.php" target="_self"><img src="../img/Manger-icon.png"><p>文件</p></a></li>
+</ul>
+</body>
+</html>
